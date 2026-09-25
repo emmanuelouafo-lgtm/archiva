@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archiva - CERs</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/images/Header.png" alt="Archiva Logo">
+            </div>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cer.html">CERs</a></li>
+                <li><a href="favoris.html">Mes CER Favoris</a></li>
+                <li><a href="gestion-cer.html">Gestion de CER</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="connexion.html" class="connexion">Connexion</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1 class="cers-title">Tous les CERs</h1>
+        </section>
+
+        <section class="cers-page">
+            <!-- ========== SIDEBAR DES FILTRES ========== -->
+            <aside class="filters">
+                <div class="filters__group">
+                    <h4 class="filters__heading">Niveaux</h4>
+                    <label class="filters__option"><input type="checkbox" name="niveau" value="X5"> X5</label>
+                    <label class="filters__option"><input type="checkbox" name="niveau" value="X4"> X4</label>
+                    <label class="filters__option"><input type="checkbox" name="niveau" value="X3"> X3</label>
+                    <label class="filters__option"><input type="checkbox" name="niveau" value="X2"> X2</label>
+                    <label class="filters__option"><input type="checkbox" name="niveau" value="X1"> X1</label>
+                </div>
+
+                <div class="filters__group">
+                    <h4 class="filters__heading">Domaines de spécialité</h4>
+                    <label class="filters__option"><input type="checkbox" name="domaine" value="reseaux"> Réseaux &amp; Infra</label>
+                    <label class="filters__option"><input type="checkbox" name="domaine" value="genie-logiciel"> Génie-logiciel</label>
+                    <label class="filters__option"><input type="checkbox" name="domaine" value="gestion-projet"> Gestion de projet</label>
+                    <label class="filters__option"><input type="checkbox" name="domaine" value="data"> Data</label>
+                    <label class="filters__option"><input type="checkbox" name="domaine" value="securite"> Sécurité</label>
+                </div>
+            </aside>
+
+            <div class="cers-content">
+                <!-- ========== TOOLBAR ========== -->
+                <div class="toolbar">
+                    <p class="toolbar__count">25 CERs Au Total</p>
+
+                    <form action="/search" class="toolbar__search">
+                        <input type="search" name="q" placeholder="Rechercher un CER" class="toolbar__search-input">
+                        <svg class="toolbar__search-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                            <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </form>
+
+                    <div class="toolbar__sort">
+                        <label for="sort" class="toolbar__sort-label">Sort By:</label>
+                        <select id="sort" name="sort" class="toolbar__sort-select">
+                            <option value="titre">Titre</option>
+                            <option value="recent">Plus récent</option>
+                            <option value="populaire">Plus populaire</option>
+                        </select>
+                    </div>
+
+                    <div class="toolbar__view-toggle">
+                        <button class="toolbar__view-btn toolbar__view-btn--active" aria-label="Vue en grille">
+                            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                                <rect x="3" y="3" width="8" height="8" rx="1" fill="currentColor"/>
+                                <rect x="13" y="3" width="8" height="8" rx="1" fill="currentColor"/>
+                                <rect x="3" y="13" width="8" height="8" rx="1" fill="currentColor"/>
+                                <rect x="13" y="13" width="8" height="8" rx="1" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <button class="toolbar__view-btn" aria-label="Vue en liste">
+                            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                                <rect x="3" y="4" width="18" height="3" rx="1" fill="currentColor"/>
+                                <rect x="3" y="10.5" width="18" height="3" rx="1" fill="currentColor"/>
+                                <rect x="3" y="17" width="18" height="3" rx="1" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ========== GRILLE DES CARTES ========== -->
+                <div class="cers-content__grid">
+
+                    <!-- Carte 1 : Card.png -->
+                    <div class="cer-card">
+                        <img class="cer-card__image" src="assets/images/Card.png" alt="Développement avancé">
+                        <button class="cer-card__favorite" aria-label="Ajouter aux favoris">
+                            <svg class="cer-card__favorite-icon" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="none" stroke="currentColor" stroke-width="2" d="M12 21s-6.7-4.35-9.3-8.1C.6 9.6 2 6 5.4 6c1.9 0 3.3 1 4.6 2.6C11.3 7 12.7 6 14.6 6 18 6 19.4 9.6 17.3 12.9 15.7 16.65 12 21 12 21z"/>
+                            </svg>
+                        </button>
+                        <p class="cer-card__author">par Providence Djekoun.</p>
+                        <h3 class="cer-card__title">Prosit 4.1 Développement avancé</h3>
+                        <p class="cer-card__description">Advance Web Development fait référence au processus de création de sites Web dynamiques et interactifs qui vont au-delà des pages Web statiques. Cela implique l'utilisation de techniques et de technologies de codage avancées pour créer des sites Web fonctionnels et visuellement attrayants qui améliorent l'expérience utilisateur.</p>
+                        <a href="#" class="cer-card__link">Consulter le CER</a>
+                    </div>
+
+                    <!-- Carte 2 : Card1.png -->
+                    <div class="cer-card">
+                        <img class="cer-card__image" src="assets/images/Card1.png" alt="Modification UML">
+                        <button class="cer-card__favorite" aria-label="Ajouter aux favoris">
+                            <svg class="cer-card__favorite-icon" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="none" stroke="currentColor" stroke-width="2" d="M12 21s-6.7-4.35-9.3-8.1C.6 9.6 2 6 5.4 6c1.9 0 3.3 1 4.6 2.6C11.3 7 12.7 6 14.6 6 18 6 19.4 9.6 17.3 12.9 15.7 16.65 12 21 12 21z"/>
+                            </svg>
+                        </button>
+                        <p class="cer-card__author">par Pauline lock</p>
+                        <h3 class="cer-card__title">Prosit 2.2 Modification UML</h3>
+                        <p class="cer-card__description">Le Langage de Modification (LM) est un langage qui permet de décrire les changements nécessaires à la mise à jour d'un système d'information existant, sans le reconstruire entièrement.</p>
+                        <a href="#" class="cer-card__link">Consulter le CER</a>
+                    </div>
+
+                    <!-- Carte 3 : Card2.png -->
+                    <div class="cer-card">
+                        <img class="cer-card__image" src="assets/images/Card2.png" alt="Annuaire Active Directory">
+                        <button class="cer-card__favorite" aria-label="Ajouter aux favoris">
+                            <svg class="cer-card__favorite-icon" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="none" stroke="currentColor" stroke-width="2" d="M12 21s-6.7-4.35-9.3-8.1C.6 9.6 2 6 5.4 6c1.9 0 3.3 1 4.6 2.6C11.3 7 12.7 6 14.6 6 18 6 19.4 9.6 17.3 12.9 15.7 16.65 12 21 12 21z"/>
+                            </svg>
+                        </button>
+                        <p class="cer-card__author">par Steeve Mandanda</p>
+                        <h3 class="cer-card__title">Prosit 3.2 Annuaire Active Directory</h3>
+                        <p class="cer-card__description">L'Annuaire Active Directory (AD) est un service d'annuaire conçu par Microsoft pour les environnements Windows Server. Il permet de centraliser la gestion des utilisateurs, ordinateurs et ressources.</p>
+                        <a href="#" class="cer-card__link">Consulter le CER</a>
+                    </div>
+
+                    <!-- Carte 4 : Card.png -->
+                    <div class="cer-card">
+                        <img class="cer-card__image" src="assets/images/Card.png" alt="API et Webservice">
+                        <button class="cer-card__favorite" aria-label="Ajouter aux favoris">
+                            <svg class="cer-card__favorite-icon" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="none" stroke="currentColor" stroke-width="2" d="M12 21s-6.7-4.35-9.3-8.1C.6 9.6 2 6 5.4 6c1.9 0 3.3 1 4.6 2.6C11.3 7 12.7 6 14.6 6 18 6 19.4 9.6 17.3 12.9 15.7 16.65 12 21 12 21z"/>
+                            </svg>
+                        </button>
+                        <p class="cer-card__author">par Joel P. Nzoupet</p>
+                        <h3 class="cer-card__title">Prosit 3.3 API et Webservice</h3>
+                        <p class="cer-card__description">Les API permettent aujourd'hui de connecter plusieurs applications entre elles, facilitant ainsi l'échange de données et l'interopérabilité des services au sein d'un système d'information.</p>
+                        <a href="#" class="cer-card__link">Consulter le CER</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__columns">
+            <div class="footer__brand">
+                <img class="footer__logo" src="assets/images/Header.png" alt="Archiva Logo">
+                <p class="footer__contact-item">
+                    <svg class="footer__contact-icon" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 12l8-5.99V6H4zm16 2.24-7.4 5.55a1 1 0 0 1-1.2 0L4 8.24V18h16V8.24z"/></svg>
+                    info@archiva.com
+                </p>
+                <p class="footer__contact-item">
+                    <svg class="footer__contact-icon" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.7 5.1 6.5 6.5l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1.1.5 1.1 1.1v3.6c0 .6-.5 1.1-1.1 1.1C10.5 21.3 2.7 13.5 2.7 3.9c0-.6.5-1.1 1.1-1.1H7.4c.6 0 1.1.5 1.1 1.1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+                    +237 600 000 000
+                </p>
+                <p class="footer__contact-item">
+                    <svg class="footer__contact-icon" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2c-4.4 0-8 3.6-8 8 0 5.4 7 11.5 7.3 11.8.2.1.4.2.7.2s.5-.1.7-.2C12.9 21.5 20 15.4 20 10c0-4.4-3.6-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                    Yaoundé, Douala/Cameroun
+                </p>
+            </div>
+
+            <div class="footer__links">
+                <h4 class="footer__heading">Accueil</h4>
+                <ul class="footer__list">
+                    <li><a href="cer.html">CERs</a></li>
+                    <li><a href="favoris.html">Mes CERs favoris</a></li>
+                    <li><a href="gestion-cer.html">Gestion de CER</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__social">
+                <h4 class="footer__heading">Social Profiles</h4>
+                <div class="footer__social-icons">
+                    <a href="#" class="footer__social-link" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6v1.9H16l-.4 2.9h-2.1v7A10 10 0 0 0 22 12z"/></svg>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M23 4.9c-.8.4-1.7.6-2.6.8a4.5 4.5 0 0 0 2-2.5c-.9.5-1.8.9-2.9 1.1A4.5 4.5 0 0 0 11.9 8c0 .4 0 .7.1 1a12.8 12.8 0 0 1-9.3-4.7 4.5 4.5 0 0 0 1.4 6 4.4 4.4 0 0 1-2-.6v.1c0 2.2 1.6 4 3.6 4.4-.4.1-.8.2-1.2.2-.3 0-.6 0-.8-.1a4.5 4.5 0 0 0 4.2 3.1A9 9 0 0 1 1 19.5 12.7 12.7 0 0 0 7.9 21.5c8.3 0 12.8-6.9 12.8-12.8v-.6c.9-.6 1.6-1.4 2.3-2.2z"/></svg>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2c2.7 0 3.1 0 4.1.1 1 0 1.7.2 2.3.5.6.2 1.1.6 1.6 1.1.5.5.8 1 1.1 1.6.2.6.4 1.3.5 2.3.1 1 .1 1.4.1 4.1s0 3.1-.1 4.1c0 1-.2 1.7-.5 2.3-.2.6-.6 1.1-1.1 1.6-.5.5-1 .8-1.6 1.1-.6.2-1.3.4-2.3.5-1 .1-1.4.1-4.1.1s-3.1 0-4.1-.1c-1 0-1.7-.2-2.3-.5-.6-.2-1.1-.6-1.6-1.1-.5-.5-.8-1-1.1-1.6-.2-.6-.4-1.3-.5-2.3C2 15.1 2 14.7 2 12s0-3.1.1-4.1c0-1 .2-1.7.5-2.3.2-.6.6-1.1 1.1-1.6.5-.5 1-.8 1.6-1.1.6-.2 1.3-.4 2.3-.5C8.9 2 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <p class="footer__copyright">© 2024 Archiva. All rights reserved.</p>
+    </footer>
+
+    <!-- Script JS (Prosit 2) -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archiva - Inscription</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="auth-page">
+    <div class="auth-card">
+        <div class="auth-card__form-side">
+            <h1 class="auth-card__title">Créer un compte</h1>
+            <form class="auth-card__form">
+                <div class="auth-card__field">
+                    <label>Nom complet</label>
+                    <input type="text" name="name" class="auth-card__input" placeholder="Nom complet" />
+                </div>
+                <div class="auth-card__field">
+                    <label>Email</label>
+                    <input type="email" name="email" class="auth-card__input" placeholder="Email" />
+                </div>
+                <div class="auth-card__field">
+                    <label>Niveaux</label>
+                    <select name="niveau" class="auth-card__input">
+                        <option value="X1">X1</option>
+                        <option value="X2">X2</option>
+                        <option value="X3">X3</option>
+                        <option value="X4">X4</option>
+                        <option value="X5">X5</option>
+                    </select>
+                </div>
+                <div class="auth-card__field">
+                    <label>Mot de passe</label>
+                    <input type="password" name="password" class="auth-card__input" placeholder="Mot de passe" />
+                </div>
+                <button type="submit" class="auth-card__submit">Créer un compte</button>
+                <p class="auth-card__switch">Vous avez déjà un compte ? <a href="connexion.html">Se connecter</a></p>
+            </form>
+        </div>
+        <div class="auth-card__illustration">
+            <!-- Illustration d'inscription -->
+            <img src="assets/images/Frame_3.png" alt="Illustration d'inscription" />
+        </div>
+    </div>
+</body>
+</html>

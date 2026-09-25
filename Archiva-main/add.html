@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archiva - Ajouter un CER</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/images/Header.png" alt="Archiva Logo">
+            </div>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cer.html">CERs</a></li>
+                <li><a href="favoris.html">Mes CER Favoris</a></li>
+                <li><a href="gestion-cer.html">Gestion de CER</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="connexion.html" class="connexion">Connexion</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1 class="cers-title">Tous les CERs</h1>
+        </section>
+    </main>
+
+    <!-- ========== MODAL ========== -->
+    <div class="modal">
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2>Ajouter un nouveau CER</h2>
+                <button class="modal__close">✕</button>
+            </div>
+
+            <form class="modal__form">
+                <div class="modal__field">
+                    <label>Titre du CER</label>
+                    <input type="text" name="titre" placeholder="Exemple: Prosit 4.3 - Recherche Opérationnelle" />
+                </div>
+
+                <div class="modal__field">
+                    <label>Niveaux</label>
+                    <select name="niveau" class="toolbar__sort-select">
+                        <option value="X1">X1</option>
+                        <option value="X2">X2</option>
+                        <option value="X3">X3</option>
+                        <option value="X4">X4</option>
+                        <option value="X5">X5</option>
+                    </select>
+                </div>
+
+                <div class="modal__field">
+                    <label>Domaines de spécialité</label>
+                    <label class="filters__option"><input type="checkbox" name="domaine" value="reseaux"> Réseaux &amp; Infra</label>
+                    <label class="filters__option"><input type="checkbox" name="domaine" value="genie-logiciel"> Génie-logiciel</label>
+                    <label class="filters__option"><input type="checkbox" name="domaine" value="gestion-projet"> Gestion de projet</label>
+                    <label class="filters__option"><input type="checkbox" name="domaine" value="data"> Data</label>
+                    <label class="filters__option"><input type="checkbox" name="domaine" value="securite"> Sécurité</label>
+                </div>
+
+                <div class="modal__field">
+                    <label>Description du CER</label>
+                    <textarea name="description" placeholder="Entrez ici la description..." rows="4"></textarea>
+                </div>
+
+                <div class="modal__field">
+                    <label>Fichiers du CER</label>
+                    <input type="file" name="fichier" accept=".pdf,.docx" id="file-upload" hidden>
+                    <label for="file-upload" class="upload-zone">
+                        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                            <path fill="currentColor" d="M12 4v16m-8-8h16" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span>Cliquez ici pour attacher le fichier du CER (.pdf ou .docx)</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="modal__submit">Enregistrer</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
